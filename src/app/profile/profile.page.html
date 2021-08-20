@@ -1,9 +1,89 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="cog-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">
+      {{ (user$ | async)?.results[0].login.username }}
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="person-add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="3" class="ion-no-padding">
+        <ion-avatar class="avatar">
+          <img [src]="(user$ | async)?.results[0].picture.large" />
+        </ion-avatar>
+      </ion-col>
+      <ion-col class="ion-no-padding">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4">
+              <p class="numbers"><span>245</span> Posts</p>
+            </ion-col>
+            <ion-col size="4">
+              <p class="numbers"><span>213</span> Followers</p>
+            </ion-col>
+            <ion-col size="4">
+              <p class="numbers"><span>292</span> Following</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-padding-horizontal">
+        <p class="name">
+          {{ (user$ | async)?.results[0].name.first }} {{ (user$ |
+          async)?.results[0].name.last }}
+        </p>
+        <p class="caption">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, minima
+          blanditiis.
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-padding-horizontal">
+        <ion-button expand="block" fill="outline" color="dark">
+          Edit Profile
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-segment [value]="segment" (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="grid">
+          <ion-icon name="grid-outline"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="album">
+          <ion-icon name="albums-outline"></ion-icon>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-row>
+    <ng-container *ngIf="segment === 'grid'">
+      <ion-row>
+        <ion-col>
+          <div class="searches-grid">
+            <div class="items-grid" *ngFor="let search of (searches$ | async)">
+              <ion-img [src]="search.download_url"></ion-img>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+    <ng-container *ngIf="segment === 'album'">
+      <app-posts [posts]="(posts$ | async)?.results"></app-posts>
+    </ng-container>
+  </ion-grid>
 </ion-content>

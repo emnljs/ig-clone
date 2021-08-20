@@ -9,6 +9,9 @@ export class PostComponent implements OnInit {
   @Input()
   post;
 
+  @Input()
+  comments;
+
   constructor() {}
 
   ngOnInit() {}

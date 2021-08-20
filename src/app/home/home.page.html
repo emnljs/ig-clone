@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button>
-        <ion-icon slot="start" name="camera-outline"></ion-icon>
+        <ion-icon slot="icon-only" name="camera-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
 
@@ -12,7 +12,7 @@
 
     <ion-buttons slot="end">
       <ion-button>
-        <ion-icon name="chatbubble-outline"></ion-icon>
+        <ion-icon slot="icon-only" name="chatbubble-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -22,6 +22,9 @@
   <ion-grid class="ion-margin-vertical ion-no-padding">
     <app-stories [stories]="(users$ | async)?.results"></app-stories>
 
-    <app-posts [posts]="(users$ | async)?.results"></app-posts>
+    <app-posts
+      [posts]="(users$ | async)?.results"
+      [comments]="true"
+    ></app-posts>
   </ion-grid>
 </ion-content>

@@ -15,6 +15,12 @@ export class RandomService {
     );
   };
 
+  getUser$ = () => {
+    return this.http.get(
+      environment.API_URL + '?seed=user&inc=login,picture,name'
+    );
+  };
+
   getPictures$ = () => {
     return this.http.get('https://picsum.photos/v2/list?page=1');
   };

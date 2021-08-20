@@ -1,0 +1,38 @@
+ion-avatar.avatar {
+  width: 77px;
+  height: 77px;
+  margin: 10px auto;
+}
+p.numbers {
+  margin: 15px auto;
+  width: 50px;
+  text-align: center;
+  font-size: 11px;
+  span {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+p.name {
+  margin: 0;
+  font-weight: 600;
+}
+
+p.caption {
+  text-align: justify;
+}
+
+.searches-grid {
+  column-count: 3;
+}
+
+.items-grid {
+  display: inline-block;
+  // margin: 0px 10px 2px 4px;
+}
+
+.items-album {
+  display: inline-block;
+  margin: 3px 0;
+}
