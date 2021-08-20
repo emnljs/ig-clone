@@ -20,8 +20,8 @@
 
 <ion-content>
   <ion-grid class="ion-margin-vertical ion-no-padding">
-    <app-stories [stories]="[1,2,3,4,5,6,7,8]"></app-stories>
+    <app-stories [stories]="(users$ | async)?.results"></app-stories>
 
-    <app-posts [posts]="[1,2,3,4,5,6,7,8]"></app-posts>
+    <app-posts [posts]="(users$ | async)?.results"></app-posts>
   </ion-grid>
 </ion-content>

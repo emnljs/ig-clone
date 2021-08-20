@@ -7,5 +7,14 @@ div.avatar-wrapper {
 
   ion-img::part(image) {
     border-radius: 70px;
+    border: 2px solid red;
+    padding: 2px;
+  }
+
+  p.username {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
   }
 }

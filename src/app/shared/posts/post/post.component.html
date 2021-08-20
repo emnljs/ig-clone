@@ -2,16 +2,19 @@
   <ion-card-header class="ion-no-padding">
     <ion-item lines="none">
       <ion-avatar slot="start">
-        <img [src]="'https://via.placeholder.com/150'" />
+        <img [src]="post.picture.thumbnail" />
       </ion-avatar>
       <ion-label>
-        <p class="post-name">profilename</p>
-        <p>address</p>
+        <p class="post-name">{{ post.login.username }}</p>
+        <p></p>
       </ion-label>
       <ion-icon slot="end" name="ellipsis-horizontal"></ion-icon>
     </ion-item>
   </ion-card-header>
-  <ion-img class="post-img" [src]="'https://via.placeholder.com/150'"></ion-img>
+  <ion-img
+    class="post-img"
+    [src]="'https://picsum.photos/150/150?random=' + post.login.uuid"
+  ></ion-img>
   <ion-card-content class="ion-no-padding">
     <ion-grid class="ion-no-padding">
       <ion-row>
@@ -45,7 +48,7 @@
       <ion-row>
         <ion-col class="ion-padding-horizontal">
           <p class="caption">
-            <span class="post-name">profilename</span>
+            <span class="post-name">{{ post.login.username }}</span>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
             suscipit iste esse dolores animi doloribus iure sapiente fugit
             beatae corrupti, ea accusamus nulla culpa veniam facere autem id
