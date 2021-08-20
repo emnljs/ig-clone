@@ -8,6 +8,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { SharedModule } from '../shared/shared.module';
+import { StoryComponent } from './story/story.component';
+import { StoriesComponent } from './stories/stories.component';
 
 @NgModule({
   imports: [
@@ -17,6 +19,6 @@ import { SharedModule } from '../shared/shared.module';
     HomePageRoutingModule,
     SharedModule,
   ],
-  declarations: [HomePage],
+  declarations: [HomePage, StoriesComponent, StoryComponent],
 })
 export class HomePageModule {}

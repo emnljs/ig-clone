@@ -1,0 +1,11 @@
+div.avatar-wrapper {
+  width: 75px;
+  margin: 0 auto;
+  font-size: 12px;
+  text-align: center;
+  line-height: 30px;
+
+  ion-img::part(image) {
+    border-radius: 70px;
+  }
+}

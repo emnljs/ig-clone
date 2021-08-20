@@ -1,0 +1,7 @@
+<ion-row>
+  <ion-slides [options]="opts">
+    <ion-slide *ngFor="let story of stories">
+      <app-story [story]="story"></app-story>
+    </ion-slide>
+  </ion-slides>
+</ion-row>
