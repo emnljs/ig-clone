@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserService } from '../services/user.service';
+import { RandomService } from '../services/random.service';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +10,9 @@ import { UserService } from '../services/user.service';
 export class HomePage implements OnInit {
   users$: Observable<any>;
 
-  constructor(private userService: UserService) {}
+  constructor(private randomService: RandomService) {}
 
   ngOnInit() {
-    this.users$ = this.userService.getUsers$();
+    this.users$ = this.randomService.getUsers$();
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { RandomService } from '../services/random.service';
 
 @Component({
   selector: 'app-search',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
+  searches$: Observable<any>;
 
-  constructor() { }
+  constructor(private randomService: RandomService) {}
 
   ngOnInit() {
+    this.searches$ = this.randomService.getPictures$();
   }
-
 }

@@ -1,9 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>search</ion-title>
+    <ion-searchbar
+      placeholder="Search"
+      [debounce]="250"
+      showCancelButton="always"
+      searchIcon="search"
+      showCancelButton="true"
+      type="text"
+    ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <div class="searches">
+        <div class="items" *ngFor="let search of (searches$ | async)">
+          <ion-img [src]="search.download_url"></ion-img>
+        </div>
+      </div>
+    </ion-row>
+  </ion-grid>
 </ion-content>
