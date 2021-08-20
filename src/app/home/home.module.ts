@@ -8,8 +8,10 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { SharedModule } from '../shared/shared.module';
-import { StoryComponent } from './story/story.component';
+import { StoryComponent } from './stories/story/story.component';
 import { StoriesComponent } from './stories/stories.component';
+import { PostComponent } from '../shared/posts/post/post.component';
+import { PostsComponent } from '../shared/posts/posts.component';
 
 @NgModule({
   imports: [
@@ -19,6 +21,12 @@ import { StoriesComponent } from './stories/stories.component';
     HomePageRoutingModule,
     SharedModule,
   ],
-  declarations: [HomePage, StoriesComponent, StoryComponent],
+  declarations: [
+    HomePage,
+    StoriesComponent,
+    StoryComponent,
+    PostsComponent,
+    PostComponent,
+  ],
 })
 export class HomePageModule {}
