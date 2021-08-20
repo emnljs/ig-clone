@@ -1,9 +1,26 @@
 ion-card.post {
-  margin: 0;
+  margin: 0 0 10px 0;
   padding: 0;
+  box-shadow: none;
 
-  p.post-name {
+  p.post-name,
+  span.post-name {
     color: #000;
     font-weight: 500;
+  }
+
+  p.likes {
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  p.caption {
+    text-align: justify;
+  }
+
+  p.time {
+    font-size: 10px;
+    text-transform: uppercase;
   }
 }
