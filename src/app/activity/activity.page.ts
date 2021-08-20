@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { RandomService } from '../services/random.service';
 
 @Component({
   selector: 'app-activity',
@@ -6,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./activity.page.scss'],
 })
 export class ActivityPage implements OnInit {
-
-  constructor() { }
+  activities$: Observable<any>;
+  constructor(private randomService: RandomService) {}
 
   ngOnInit() {
+    this.activities$ = this.randomService.getUsers$();
   }
-
 }

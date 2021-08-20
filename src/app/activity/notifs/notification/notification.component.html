@@ -1,0 +1,13 @@
+<ion-item lines="none">
+  <ion-avatar slot="start">
+    <img [src]="activity.picture.thumbnail" />
+  </ion-avatar>
+  <ion-label class="label">
+    <span>{{ activity.login.username }}</span> liked your photo
+  </ion-label>
+  <ion-thumbnail slot="end">
+    <img
+      [src]="'https://picsum.photos/150/150?random=' + activity.login.uuid"
+    />
+  </ion-thumbnail>
+</ion-item>

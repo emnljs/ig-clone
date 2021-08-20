@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>activity</ion-title>
+    <ion-title class="ion-text-center">Activity</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <app-notifs [activities]="(activities$ | async)?.results"></app-notifs>
+  </ion-grid>
 </ion-content>
